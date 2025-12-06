@@ -1,55 +1,56 @@
-# [PROJECT_NAME] Constitution
-<!-- Example: Spec Constitution, TaskFlow Constitution, etc. -->
+<!--
+Sync Impact Report:
+Version change: None -> 1.0.0
+List of modified principles:
+  - Technical Accuracy (Added)
+  - Educational Clarity (Added)
+  - Practical Reproducibility (Added)
+  - Engineering Rigor (Added)
+Added sections:
+  - Key Standards
+  - Constraints
+Removed sections:
+  - PRINCIPLE_5, PRINCIPLE_6
+Templates requiring updates:
+  - .specify/templates/plan-template.md (⚠ pending)
+  - .specify/templates/spec-template.md (⚠ pending)
+  - .specify/templates/tasks-template.md (⚠ pending)
+  - .specify/templates/commands/sp.constitution.md (⚠ pending)
+Follow-up TODOs: None
+-->
+# AI/Spec-Driven Book Creation — Physical AI & Humanoid Robotics Constitution
 
 ## Core Principles
 
-### [PRINCIPLE_1_NAME]
-<!-- Example: I. Library-First -->
-[PRINCIPLE_1_DESCRIPTION]
-<!-- Example: Every feature starts as a standalone library; Libraries must be self-contained, independently testable, documented; Clear purpose required - no organizational-only libraries -->
+### I. Technical Accuracy
+Technical Accuracy across robotics, AI, and simulation frameworks (ROS 2, Gazebo, Isaac). All technical claims MUST reference official documentation (ROS 2, NVIDIA Isaac, Gazebo, Unity). No hallucinated APIs, commands, or hardware specs. All references to NVIDIA Isaac, ROS 2, Gazebo MUST match official functionality. No claims about hardware unless they match vendor specifications.
 
-### [PRINCIPLE_2_NAME]
-<!-- Example: II. CLI Interface -->
-[PRINCIPLE_2_DESCRIPTION]
-<!-- Example: Every library exposes functionality via CLI; Text in/out protocol: stdin/args → stdout, errors → stderr; Support JSON + human-readable formats -->
+### II. Educational Clarity
+Educational Clarity for students and developers (intermediate CS/AI background). When describing robotics concepts (URDF, VSLAM, kinematics), provide simplified + formal definitions. Tone MUST be authoritative but beginner-friendly; avoid over-complex jargon unless explained. When introducing new concepts (e.g., VSLAM, Kinematics, Nav2), include: Definition, Real-world analogy, Example command/code, and Integration notes. Flesch-Kincaid grade target: 8–12.
 
-### [PRINCIPLE_3_NAME]
-<!-- Example: III. Test-First (NON-NEGOTIABLE) -->
-[PRINCIPLE_3_DESCRIPTION]
-<!-- Example: TDD mandatory: Tests written → User approved → Tests fail → Then implement; Red-Green-Refactor cycle strictly enforced -->
+### III. Practical Reproducibility
+Practical Reproducibility (all tools, setups, and workflows MUST be replicable). All workflows (simulation, navigation, perception, VLA) MUST be fully reproducible by students. Code MUST compile and reflect real ROS 2 / Isaac / Python usage. Must include step-by-step guides for simulations, hardware setup, and project execution.
 
-### [PRINCIPLE_4_NAME]
-<!-- Example: IV. Integration Testing -->
-[PRINCIPLE_4_DESCRIPTION]
-<!-- Example: Focus areas requiring integration tests: New library contract tests, Contract changes, Inter-service communication, Shared schemas -->
+### IV. Engineering Rigor
+Engineering Rigor (hardware specs, simulations, and algorithms MUST be validated). Book accurately explains the full pipeline: ROS 2 → Gazebo → Unity → Isaac → VLA → Humanoid Deployment. The book successfully builds and deploys via Docusaurus without build errors.
 
-### [PRINCIPLE_5_NAME]
-<!-- Example: V. Observability, VI. Versioning & Breaking Changes, VII. Simplicity -->
-[PRINCIPLE_5_DESCRIPTION]
-<!-- Example: Text I/O ensures debuggability; Structured logging required; Or: MAJOR.MINOR.BUILD format; Or: Start simple, YAGNI principles -->
+## Key Standards
 
-### [PRINCIPLE_6_NAME]
+- All technical claims MUST reference official documentation (ROS 2, NVIDIA Isaac, Gazebo, Unity)
+- When describing robotics concepts (URDF, VSLAM, kinematics), provide simplified + formal definitions
+- Writing Format: modular sections optimized for Docusaurus (MDX-friendly)
+- Tone: authoritative but beginner-friendly; avoid over-complex jargon unless explained
+- MUST include step-by-step guides for simulations, hardware setup, and project execution
 
+## Constraints
 
-[PRINCIPLE__DESCRIPTION]
-
-## [SECTION_2_NAME]
-<!-- Example: Additional Constraints, Security Requirements, Performance Standards, etc. -->
-
-[SECTION_2_CONTENT]
-<!-- Example: Technology stack requirements, compliance standards, deployment policies, etc. -->
-
-## [SECTION_3_NAME]
-<!-- Example: Development Workflow, Review Process, Quality Gates, etc. -->
-
-[SECTION_3_CONTENT]
-<!-- Example: Code review requirements, testing gates, deployment approval process, etc. -->
+- Book structure aligned with the course: 13–15 chapters mirroring modules & weekly breakdown
+- Required elements: diagrams, code snippets, architecture explanations, hardware lists
+- MUST include Capstone chapter: “The Autonomous Humanoid”
+- Deployment-ready format: Markdown/MDX only (no proprietary formatting)
+- Content MUST be optimized for GitHub Pages build (no oversized images, stable links)
 
 ## Governance
-<!-- Example: Constitution supersedes all other practices; Amendments require documentation, approval, migration plan -->
+This constitution supersedes all other practices. Amendments require documentation, approval, and a migration plan. All PRs/reviews MUST verify compliance. Complexity MUST be justified.
 
-[GOVERNANCE_RULES]
-<!-- Example: All PRs/reviews must verify compliance; Complexity must be justified; Use [GUIDANCE_FILE] for runtime development guidance -->
-
-**Version**: [CONSTITUTION_VERSION] | **Ratified**: [RATIFICATION_DATE] | **Last Amended**: [LAST_AMENDED_DATE]
-<!-- Example: Version: 2.1.1 | Ratified: 2025-06-13 | Last Amended: 2025-07-16 -->
+**Version**: 1.0.0 | **Ratified**: 2025-12-04 | **Last Amended**: 2025-12-04

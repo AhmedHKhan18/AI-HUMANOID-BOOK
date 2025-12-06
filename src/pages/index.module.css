@@ -1,0 +1,275 @@
+/* Hero Section - Clean, Academic Style */
+.heroSection {
+  background: linear-gradient(180deg, var(--ifm-background-color) 0%, rgba(44, 218, 96, 0.63) 100%);
+  padding: 120px 20px 96px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 98vw;
+}
+
+.heroContent {
+  max-width: 900px;
+  margin: 0 auto;
+  z-index: 1;
+  position: relative;
+}
+
+.heroTitle {
+  font-size: 3.75rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-font-color-base);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+  font-size: 1.375rem;
+  color: var(--ifm-color-emphasis-700);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.heroButton {
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.heroButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(46, 133, 85, 0.2);
+}
+
+/* Section Padding - Academic spacing */
+.sectionPadding {
+  padding: 96px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.containerWide {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.sectionHeading {
+  font-size: 2.75rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  color: var(--ifm-font-color-base);
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+/* Module Blocks - Clean Academic Cards */
+.topicBlocksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.topicBlock {
+  background-color: var(--ifm-background-color);
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.topicBlock:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(46, 133, 85, 0.12);
+  border-color: var(--ifm-color-primary-light);
+}
+
+.topicLabel {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ifm-color-primary);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background-color: rgba(46, 133, 85, 0.08);
+  padding: 4px 12px;
+  border-radius: 4px;
+}
+
+.topicHeading {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--ifm-font-color-base);
+  line-height: 1.3;
+}
+
+.topicDescription {
+  font-size: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  line-height: 1.65;
+  margin-bottom: 20px;
+}
+
+.topicLink {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ifm-color-primary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.topicLink:hover {
+  color: var(--ifm-color-primary-dark);
+  text-decoration: none;
+  transform: translateX(4px);
+}
+
+/* Motivation Section - Emphasis on AI-Native Focus */
+.motivationSection {
+  background: linear-gradient(180deg, rgba(46, 133, 85, 0.03) 0%, var(--ifm-background-color) 100%);
+}
+
+.motivationText {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 400;
+}
+
+/* Learning Path Section */
+.learningPathSection {
+  background-color: var(--ifm-background-color);
+  text-align: center;
+}
+
+.pathDescription {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  max-width: 750px;
+  margin: 0 auto 2.5rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 3rem;
+}
+
+/* Responsive Design - Mobile-First Academic Layout */
+@media (max-width: 996px) {
+  .heroSection {
+    padding: 80px 20px 64px;
+  }
+  .heroTitle {
+    font-size: 2.75rem;
+  }
+  .heroSubtitle {
+    font-size: 1.25rem;
+  }
+  .heroButtons {
+    flex-direction: column;
+    gap: 12px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  .sectionPadding {
+    padding: 72px 20px;
+  }
+  .sectionHeading {
+    font-size: 2.25rem;
+    margin-bottom: 2.5rem;
+  }
+  .topicBlocksGrid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 60px 16px 48px;
+  }
+  .heroTitle {
+    font-size: 2.25rem;
+    letter-spacing: -0.015em;
+  }
+  .heroSubtitle {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+  .heroButton {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+  .sectionPadding {
+    padding: 56px 16px;
+  }
+  .sectionHeading {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  .topicBlock {
+    padding: 24px;
+  }
+  .topicHeading {
+    font-size: 1.35rem;
+  }
+  .motivationText {
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .pathDescription {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 1.875rem;
+  }
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+  .sectionHeading {
+    font-size: 1.75rem;
+  }
+  .topicLabel {
+    font-size: 0.7rem;
+  }
+  .topicHeading {
+    font-size: 1.25rem;
+  }
+}

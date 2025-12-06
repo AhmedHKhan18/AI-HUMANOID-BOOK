@@ -1,0 +1,573 @@
+/**
+ * Documentation Pages Styling - Academic Green Theme
+ * Matching the reference textbook at physicalhumanoidaitextbook.vercel.app
+ * with scholarly green accents and academic typography
+ */
+
+/* ============================================
+   DOCUMENTATION LAYOUT & CONTAINER
+   ============================================ */
+
+/* Main documentation wrapper */
+.docMainContainer {
+  max-width: 1400px;
+  margin: 0;
+}
+
+/* Content column - narrow for readability, aligned left */
+article.markdown {
+  max-width: 850px;
+  margin: 0;
+  margin-left: 0;
+  padding: 3rem 0 3rem 0;
+  line-height: 1.75;
+}
+
+/* Wider reading container on large screens */
+@media (min-width: 1440px) {
+  article.markdown {
+    max-width: 900px;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 996px) {
+  article.markdown {
+    padding: 2rem 1.5rem;
+  }
+}
+
+/* ============================================
+   TYPOGRAPHY - ACADEMIC HIERARCHY
+   ============================================ */
+
+/* Page Title (H1) - Large, Bold, Distinctive */
+article.markdown h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: var(--ifm-font-color-base);
+  border-bottom: none;
+  padding-bottom: 1rem;
+}
+
+/* Section Headings (H2) - Clear Hierarchy */
+article.markdown h2 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-font-color-base);
+  border-bottom: 2px solid var(--ifm-color-emphasis-200);
+  padding-bottom: 0.75rem;
+}
+
+/* First H2 after H1 - reduce top margin */
+article.markdown h1 + h2 {
+  margin-top: 2.5rem;
+}
+
+/* Subsection Headings (H3) */
+article.markdown h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-top: 3rem;
+  margin-bottom: 1.25rem;
+  color: var(--ifm-font-color-base);
+}
+
+/* Sub-subsection Headings (H4) */
+article.markdown h4 {
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+/* Smaller Headings (H5, H6) */
+article.markdown h5 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.875rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+article.markdown h6 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-emphasis-700);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ============================================
+   PARAGRAPH & TEXT STYLING
+   ============================================ */
+
+/* Body paragraphs */
+article.markdown p {
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+  color: var(--ifm-font-color-base);
+}
+
+/* First paragraph after heading - slightly larger */
+article.markdown h2 + p,
+article.markdown h3 + p {
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 1.75rem;
+}
+
+/* Strong emphasis */
+article.markdown strong {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+/* Inline code */
+article.markdown code {
+  background-color: rgba(22, 163, 74, 0.08);
+  border: 1px solid rgba(22, 163, 74, 0.15);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  font-size: 0.9em;
+  font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+  color: var(--ifm-font-color-base);
+}
+
+/* Links */
+article.markdown a {
+  color: #16A34A;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+article.markdown a:hover {
+  color: #15803D;
+  border-bottom-color: #16A34A;
+}
+
+/* External link icon */
+article.markdown a[href^='http']:not([href*='localhost'])::after {
+  content: ' ↗';
+  font-size: 0.85em;
+  opacity: 0.6;
+}
+
+/* ============================================
+   LISTS - CLEAN ACADEMIC STYLE
+   ============================================ */
+
+/* Unordered lists */
+article.markdown ul {
+  margin: 1.5rem 0;
+  padding-left: 1.75rem;
+}
+
+article.markdown ul li {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+  padding-left: 0.5rem;
+}
+
+article.markdown ul li::marker {
+  color: #16A34A;
+  font-size: 1.1em;
+}
+
+/* Ordered lists */
+article.markdown ol {
+  margin: 1.5rem 0;
+  padding-left: 1.75rem;
+  counter-reset: item;
+}
+
+article.markdown ol li {
+  margin-bottom: 0.75rem;
+  line-height: 1.75;
+  padding-left: 0.5rem;
+}
+
+article.markdown ol li::marker {
+  color: #16A34A;
+  font-weight: 600;
+}
+
+/* Nested lists */
+article.markdown ul ul,
+article.markdown ol ul,
+article.markdown ul ol,
+article.markdown ol ol {
+  margin: 0.5rem 0;
+  margin-left: 1rem;
+}
+
+/* ============================================
+   CODE BLOCKS
+   ============================================ */
+
+/* Code block container */
+article.markdown pre {
+  margin: 2rem 0;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Code block content */
+article.markdown pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Code block language label */
+.prism-code {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* Code block title */
+div[class*='codeBlockTitle'] {
+  background-color: rgba(22, 163, 74, 0.08);
+  border-bottom: 1px solid rgba(22, 163, 74, 0.2);
+  color: #15803D;
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px 8px 0 0;
+}
+
+/* ============================================
+   ADMONITIONS / CALLOUTS
+   ============================================ */
+
+/* Base admonition styling */
+.admonition {
+  margin: 2rem 0;
+  border-left: 4px solid;
+  border-radius: 6px;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--ifm-background-surface-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.admonition-heading {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1.0625rem;
+  margin-bottom: 0.75rem;
+}
+
+.admonition-icon {
+  margin-right: 0.5rem;
+}
+
+.admonition-content {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.admonition-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* Info admonition (Learning Objectives, Key Concepts) - Green theme */
+.admonition-info {
+  border-left-color: #16A34A;
+  background-color: rgba(22, 163, 74, 0.05);
+}
+
+.admonition-info .admonition-heading {
+  color: #15803D;
+}
+
+.admonition-info .admonition-icon svg {
+  fill: #16A34A;
+}
+
+/* Tip admonition */
+.admonition-tip {
+  border-left-color: #16A34A;
+  background-color: rgba(22, 163, 74, 0.05);
+}
+
+.admonition-tip .admonition-heading {
+  color: #15803D;
+}
+
+/* Warning admonition */
+.admonition-warning {
+  border-left-color: #F59E0B;
+  background-color: rgba(245, 158, 11, 0.05);
+}
+
+.admonition-warning .admonition-heading {
+  color: #D97706;
+}
+
+/* Caution/Danger admonition */
+.admonition-caution,
+.admonition-danger {
+  border-left-color: #EF4444;
+  background-color: rgba(239, 68, 68, 0.05);
+}
+
+.admonition-caution .admonition-heading,
+.admonition-danger .admonition-heading {
+  color: #DC2626;
+}
+
+/* Note admonition */
+.admonition-note {
+  border-left-color: #3B82F6;
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+.admonition-note .admonition-heading {
+  color: #2563EB;
+}
+
+/* ============================================
+   TABLES
+   ============================================ */
+
+article.markdown table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+article.markdown thead {
+  background-color: rgba(22, 163, 74, 0.08);
+}
+
+article.markdown th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #15803D;
+  border-bottom: 2px solid rgba(22, 163, 74, 0.2);
+}
+
+article.markdown td {
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--ifm-color-emphasis-100);
+  line-height: 1.6;
+}
+
+article.markdown tbody tr:last-child td {
+  border-bottom: none;
+}
+
+article.markdown tbody tr:hover {
+  background-color: rgba(22, 163, 74, 0.03);
+}
+
+/* ============================================
+   BLOCKQUOTES
+   ============================================ */
+
+article.markdown blockquote {
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem;
+  border-left: 4px solid #16A34A;
+  background-color: rgba(22, 163, 74, 0.05);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: var(--ifm-color-emphasis-800);
+}
+
+article.markdown blockquote p {
+  margin-bottom: 0.75rem;
+}
+
+article.markdown blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================
+   HORIZONTAL RULE
+   ============================================ */
+
+article.markdown hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 2px solid var(--ifm-color-emphasis-200);
+}
+
+/* ============================================
+   IMAGES & FIGURES
+   ============================================ */
+
+article.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   TABLE OF CONTENTS (TOC)
+   ============================================ */
+
+.table-of-contents {
+  font-size: 0.9375rem;
+}
+
+.table-of-contents__link {
+  color: var(--ifm-color-emphasis-700);
+  transition: all 0.2s ease;
+}
+
+.table-of-contents__link:hover {
+  color: #16A34A;
+  text-decoration: none;
+}
+
+.table-of-contents__link--active {
+  color: #16A34A;
+  font-weight: 600;
+  border-left: 2px solid #16A34A;
+  padding-left: 0.75rem;
+  margin-left: -0.75rem;
+}
+
+/* ============================================
+   PAGINATION (PREV/NEXT BUTTONS)
+   ============================================ */
+
+.pagination-nav__link {
+  border: 1px solid var(--ifm-color-emphasis-200);
+  border-radius: 8px;
+  transition: all 0.25s ease;
+}
+
+.pagination-nav__link:hover {
+  border-color: #16A34A;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+  text-decoration: none;
+}
+
+.pagination-nav__label {
+  color: #16A34A;
+  font-weight: 600;
+}
+
+.pagination-nav__sublabel {
+  color: var(--ifm-color-emphasis-700);
+}
+
+/* ============================================
+   RESPONSIVE TYPOGRAPHY
+   ============================================ */
+
+@media (max-width: 996px) {
+  article.markdown h1 {
+    font-size: 2.5rem;
+  }
+
+  article.markdown h2 {
+    font-size: 2rem;
+    margin-top: 3rem;
+  }
+
+  article.markdown h3 {
+    font-size: 1.5rem;
+  }
+
+  article.markdown h4 {
+    font-size: 1.25rem;
+  }
+
+  article.markdown p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  article.markdown h1 {
+    font-size: 2.25rem;
+  }
+
+  article.markdown h2 {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+  }
+
+  article.markdown h3 {
+    font-size: 1.375rem;
+  }
+
+  article.markdown p {
+    font-size: 0.9375rem;
+  }
+
+  article.markdown ul,
+  article.markdown ol {
+    padding-left: 1.5rem;
+  }
+}
+
+/* ============================================
+   DARK MODE ADJUSTMENTS
+   ============================================ */
+
+[data-theme='dark'] article.markdown code {
+  background-color: rgba(34, 197, 94, 0.12);
+  border-color: rgba(34, 197, 94, 0.2);
+}
+
+[data-theme='dark'] article.markdown a {
+  color: #22C55E;
+}
+
+[data-theme='dark'] article.markdown a:hover {
+  color: #4ADE80;
+  border-bottom-color: #22C55E;
+}
+
+[data-theme='dark'] article.markdown ul li::marker {
+  color: #22C55E;
+}
+
+[data-theme='dark'] article.markdown ol li::marker {
+  color: #22C55E;
+}
+
+[data-theme='dark'] .admonition-info {
+  background-color: rgba(34, 197, 94, 0.08);
+  border-left-color: #22C55E;
+}
+
+[data-theme='dark'] .admonition-info .admonition-heading {
+  color: #4ADE80;
+}
+
+[data-theme='dark'] .table-of-contents__link--active {
+  color: #22C55E;
+  border-left-color: #22C55E;
+}

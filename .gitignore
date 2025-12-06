@@ -1,0 +1,53 @@
+# Gitignore for Physical AI & Humanoid Robotics Book Project
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+*.egg-info/
+.Python/
+.vscode/
+
+# Node.js / Docusaurus
+node_modules/
+.docusaurus/
+build/
+.cache/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env*.local
+.DS_Store
+
+# C# / Unity
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.unityproj
+*.csproj
+*.sln
+*.pidb
+*.booproj
+*.svclog
+*.opendb
+*.VC.db
+*.sdf
+*.vshost.*
+.vs/
+Assets/AssetStoreTools
+Temp/
+Library/
+Logs/
+Packages/
+ProjectSettings/
+UserSettings/
+UnityPackageManager/
+
+# OS generated files
+.DS_Store
+Thumbs.db
