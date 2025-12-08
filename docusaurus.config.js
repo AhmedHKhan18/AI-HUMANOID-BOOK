@@ -4,7 +4,7 @@ const {themes: prismThemes} = require('prism-react-renderer');
 const config = {
   title: 'Physical AI & Humanoid Robotics',
   tagline: 'A Comprehensive Guide to Intelligent Robotics',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://ai-humanoid-book-six.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/favicon.ico',
@@ -26,6 +26,10 @@ const config = {
     },
   },
 
+  i18n: {
+    defaultLocale: 'en',
+    locales: ['en', 'ur'],
+  },
 
   organizationName: 'your-organization',
   projectName: 'physical-ai-humanoid-robotics-book',
@@ -37,7 +41,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/your-repo-link/edit/main/',
+          // editUrl: 'https://github.com/your-repo-link/edit/main/',
           remarkPlugins: [require('remark-mermaid')],
           // Use the textbookSidebar from sidebars.js
           sidebarCollapsible: true,
@@ -68,9 +72,23 @@ const config = {
             position: 'left',
           },
           {
-            href: 'https://github.com/your-repo-link',
+            href: 'https://github.com/AhmedHKhan18',
             label: 'GitHub',
             position: 'right',
+          },
+          {
+            type: 'localeDropdown',
+            position: 'right',
+          i18n: {
+          defaultLocale: 'en',
+          locales: ['en', 'ur'],
+          localeConfigs: {
+              ur: {
+              label: 'اردو',
+              direction: 'rtl',
+            },
+          },
+        },
           },
         ],
       },
@@ -91,11 +109,11 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/your-repo-link',
+                href: 'https://github.com/AhmedHKhan18',
               },
               {
                 label: 'LinkedIn',
-                href: 'https://linkedin.com/in/your-profile',
+                href: 'https://linkedin.com/in/ahmed-hassankhan',
               },
               {
                 label: 'Twitter',

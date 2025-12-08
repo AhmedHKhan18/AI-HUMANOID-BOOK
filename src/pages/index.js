@@ -16,7 +16,7 @@ function HomepageHero() {
           A Comprehensive Open-Source Textbook for Building Intelligent Humanoid Robots
         </p>
         <div className={styles.heroButtons}>
-          <Link className={clsx('button button--primary button--lg', styles.heroButton)} to="/docs/intro">
+          <Link className={clsx('button button--primary button--lg', styles.heroButton)} to="docs/intro">
             Start Reading →
           </Link>
         </div>
