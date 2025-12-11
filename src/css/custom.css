@@ -7,6 +7,11 @@
 /* Import documentation page styles */
 @import './docs.css';
 
+/* ============================================
+   URDU FONT IMPORTS - Noto Nastaliq & Noto Sans Arabic
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;500;600;700&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+
 /* Light Mode - Primary Theme Variables (Green Academic) */
 :root {
   /* Primary Color Palette - Scholarly Green */
@@ -275,4 +280,609 @@ h1, h2, h3, h4, h5, h6 {
 
 [data-theme='dark'] .theme-doc-sidebar-container::-webkit-scrollbar-thumb:hover {
   background-color: rgba(34, 197, 94, 0.5);
+}
+
+/* ============================================
+   RTL SUPPORT FOR URDU LOCALE
+   ============================================ */
+
+/* Base RTL direction for Urdu locale */
+html[lang='ur'],
+html[lang='ur-PK'] {
+  direction: rtl;
+}
+
+/* Urdu Typography - Font Stack */
+html[lang='ur'] body,
+html[lang='ur-PK'] body {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', 'Segoe UI', 'Arial', sans-serif;
+  line-height: 1.9;
+}
+
+/* Urdu Headings */
+html[lang='ur'] h1, html[lang='ur'] h2, html[lang='ur'] h3,
+html[lang='ur'] h4, html[lang='ur'] h5, html[lang='ur'] h6,
+html[lang='ur-PK'] h1, html[lang='ur-PK'] h2, html[lang='ur-PK'] h3,
+html[lang='ur-PK'] h4, html[lang='ur-PK'] h5, html[lang='ur-PK'] h6 {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', 'Arial', sans-serif;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+/* RTL Navbar Adjustments */
+html[lang='ur'] .navbar,
+html[lang='ur-PK'] .navbar {
+  direction: rtl;
+}
+
+html[lang='ur'] .navbar__items,
+html[lang='ur-PK'] .navbar__items {
+  flex-direction: row-reverse;
+}
+
+html[lang='ur'] .navbar__items--right,
+html[lang='ur-PK'] .navbar__items--right {
+  flex-direction: row-reverse;
+}
+
+html[lang='ur'] .navbar__title,
+html[lang='ur-PK'] .navbar__title {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', sans-serif;
+}
+
+/* RTL Sidebar Adjustments */
+html[lang='ur'] .theme-doc-sidebar-container,
+html[lang='ur-PK'] .theme-doc-sidebar-container {
+  border-right: none;
+  border-left: 1px solid var(--ifm-color-emphasis-200);
+}
+
+html[lang='ur'] .menu,
+html[lang='ur-PK'] .menu {
+  padding: 1rem 0 1rem 0.75rem;
+  direction: rtl;
+  text-align: right;
+}
+
+html[lang='ur'] .menu__link,
+html[lang='ur-PK'] .menu__link {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', sans-serif;
+}
+
+html[lang='ur'] .menu__link--active,
+html[lang='ur-PK'] .menu__link--active {
+  border-left: none;
+  border-right: 3px solid #16A34A;
+  padding-right: calc(0.75rem - 3px);
+  padding-left: 0.75rem;
+}
+
+html[lang='ur'] .menu__list .menu__list,
+html[lang='ur-PK'] .menu__list .menu__list {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 1rem;
+  border-left: none;
+  border-right: 1px solid var(--ifm-color-emphasis-200);
+}
+
+/* RTL Collapse arrow */
+html[lang='ur'] .menu__link--sublist::after,
+html[lang='ur-PK'] .menu__link--sublist::after {
+  transform: scaleX(-1);
+}
+
+/* RTL Article Content */
+html[lang='ur'] article.markdown,
+html[lang='ur-PK'] article.markdown {
+  direction: rtl;
+  text-align: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+html[lang='ur'] article.markdown p,
+html[lang='ur'] article.markdown li,
+html[lang='ur-PK'] article.markdown p,
+html[lang='ur-PK'] article.markdown li {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', sans-serif;
+  line-height: 2;
+}
+
+/* RTL Lists */
+html[lang='ur'] article.markdown ul,
+html[lang='ur'] article.markdown ol,
+html[lang='ur-PK'] article.markdown ul,
+html[lang='ur-PK'] article.markdown ol {
+  padding-left: 0;
+  padding-right: 1.75rem;
+}
+
+html[lang='ur'] article.markdown ul li,
+html[lang='ur'] article.markdown ol li,
+html[lang='ur-PK'] article.markdown ul li,
+html[lang='ur-PK'] article.markdown ol li {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+
+/* RTL Nested Lists */
+html[lang='ur'] article.markdown ul ul,
+html[lang='ur'] article.markdown ol ul,
+html[lang='ur'] article.markdown ul ol,
+html[lang='ur'] article.markdown ol ol,
+html[lang='ur-PK'] article.markdown ul ul,
+html[lang='ur-PK'] article.markdown ol ul,
+html[lang='ur-PK'] article.markdown ul ol,
+html[lang='ur-PK'] article.markdown ol ol {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+/* RTL Blockquote */
+html[lang='ur'] article.markdown blockquote,
+html[lang='ur-PK'] article.markdown blockquote {
+  border-left: none;
+  border-right: 4px solid #16A34A;
+  border-radius: 6px 0 0 6px;
+}
+
+/* RTL Code Blocks - Keep LTR for code */
+html[lang='ur'] article.markdown pre,
+html[lang='ur'] article.markdown code,
+html[lang='ur-PK'] article.markdown pre,
+html[lang='ur-PK'] article.markdown code {
+  direction: ltr;
+  text-align: left;
+}
+
+/* RTL Tables */
+html[lang='ur'] article.markdown table,
+html[lang='ur-PK'] article.markdown table {
+  direction: rtl;
+}
+
+html[lang='ur'] article.markdown th,
+html[lang='ur'] article.markdown td,
+html[lang='ur-PK'] article.markdown th,
+html[lang='ur-PK'] article.markdown td {
+  text-align: right;
+}
+
+/* RTL Admonitions */
+html[lang='ur'] .admonition,
+html[lang='ur-PK'] .admonition {
+  direction: rtl;
+  text-align: right;
+  border-left: none;
+  border-right: 4px solid;
+}
+
+html[lang='ur'] .admonition-heading,
+html[lang='ur-PK'] .admonition-heading {
+  flex-direction: row-reverse;
+}
+
+html[lang='ur'] .admonition-icon,
+html[lang='ur-PK'] .admonition-icon {
+  margin-right: 0;
+  margin-left: 0.5rem;
+}
+
+/* RTL Table of Contents */
+html[lang='ur'] .table-of-contents,
+html[lang='ur-PK'] .table-of-contents {
+  direction: rtl;
+  text-align: right;
+}
+
+html[lang='ur'] .table-of-contents__link--active,
+html[lang='ur-PK'] .table-of-contents__link--active {
+  border-left: none;
+  border-right: 2px solid #16A34A;
+  padding-left: 0;
+  padding-right: 0.75rem;
+  margin-left: 0;
+  margin-right: -0.75rem;
+}
+
+/* RTL Pagination */
+html[lang='ur'] .pagination-nav,
+html[lang='ur-PK'] .pagination-nav {
+  direction: rtl;
+}
+
+html[lang='ur'] .pagination-nav__link--prev,
+html[lang='ur-PK'] .pagination-nav__link--prev {
+  flex-direction: row-reverse;
+}
+
+html[lang='ur'] .pagination-nav__link--next,
+html[lang='ur-PK'] .pagination-nav__link--next {
+  flex-direction: row-reverse;
+}
+
+/* RTL Footer */
+html[lang='ur'] .footer,
+html[lang='ur-PK'] .footer {
+  direction: rtl;
+  text-align: right;
+}
+
+/* RTL Doc Item Wrapper */
+html[lang='ur'] .docItemCol_VOVn,
+html[lang='ur-PK'] .docItemCol_VOVn {
+  direction: rtl;
+}
+
+/* RTL TOC Desktop */
+html[lang='ur'] .tableOfContents_bqdL,
+html[lang='ur-PK'] .tableOfContents_bqdL {
+  direction: rtl;
+  text-align: right;
+}
+
+/* RTL Breadcrumbs */
+html[lang='ur'] .breadcrumbs,
+html[lang='ur-PK'] .breadcrumbs {
+  direction: rtl;
+}
+
+html[lang='ur'] .breadcrumbs__item::before,
+html[lang='ur-PK'] .breadcrumbs__item::before {
+  transform: scaleX(-1);
+}
+
+/* Language Dropdown Styling - Match Green Theme */
+.navbar__item.dropdown.dropdown--right .dropdown__menu {
+  min-width: 120px;
+}
+
+.dropdown__link {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.dropdown__link:hover {
+  background-color: rgba(22, 163, 74, 0.1);
+  color: #16A34A;
+}
+
+/* Active locale indicator */
+.dropdown__link--active {
+  color: #16A34A;
+  font-weight: 600;
+}
+
+/* Language toggle button styling */
+.navbar__link[class*='localeDropdown'] {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Ensure code direction stays LTR even in RTL context */
+[dir='rtl'] pre,
+[dir='rtl'] code {
+  direction: ltr;
+  text-align: left;
+}
+
+/* ============================================
+   SEARCH BAR STYLING - GREEN ACADEMIC THEME
+   ============================================ */
+
+/* Navbar search container */
+.navbar .DocSearch,
+.navbar .aa-Autocomplete,
+.navbar [class*='searchBar'] {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* DocSearch / Local Search Button */
+.DocSearch-Button,
+button[class*='searchBar'],
+.aa-DetachedSearchButton {
+  padding: 0 12px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  background-color: var(--ifm-background-surface-color);
+  color: var(--ifm-font-color-base);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.DocSearch-Button:hover,
+button[class*='searchBar']:hover,
+.aa-DetachedSearchButton:hover {
+  border-color: var(--ifm-color-primary);
+  background-color: rgba(22, 163, 74, 0.05);
+}
+
+.DocSearch-Button:focus,
+button[class*='searchBar']:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* Search icon styling */
+.DocSearch-Button .DocSearch-Search-Icon,
+.aa-DetachedSearchButton svg,
+[class*='searchBar'] svg {
+  width: 16px;
+  height: 16px;
+  color: var(--ifm-color-primary);
+}
+
+/* Search placeholder text */
+.DocSearch-Button-Placeholder,
+.aa-DetachedSearchButtonPlaceholder {
+  font-size: 14px;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* Keyboard shortcut keys */
+.DocSearch-Button-Keys,
+.aa-DetachedSearchButtonKeys {
+  display: flex;
+  gap: 4px;
+}
+
+.DocSearch-Button-Key,
+kbd.aa-DetachedSearchButtonKey {
+  padding: 2px 6px;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, monospace;
+  color: var(--ifm-color-emphasis-600);
+  background-color: var(--ifm-color-emphasis-100);
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  box-shadow: none;
+}
+
+/* ============================================
+   SEARCH MODAL STYLING
+   ============================================ */
+
+/* Modal overlay */
+.DocSearch-Container,
+.aa-DetachedContainer {
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 300;
+}
+
+/* Modal box */
+.DocSearch-Modal,
+.aa-Panel {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--ifm-color-emphasis-200);
+  overflow: hidden;
+}
+
+/* Modal header / search form */
+.DocSearch-SearchBar,
+.aa-Form {
+  border-bottom: 1px solid var(--ifm-color-emphasis-200);
+  padding: 12px 16px;
+}
+
+.DocSearch-Input,
+.aa-Input {
+  font-size: 16px;
+  padding: 8px 12px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+  width: 100%;
+}
+
+.DocSearch-Input:focus,
+.aa-Input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.15);
+}
+
+/* Search results */
+.DocSearch-Hits,
+.aa-List {
+  padding: 8px 0;
+}
+
+.DocSearch-Hit,
+.aa-Item {
+  padding: 12px 16px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.DocSearch-Hit[aria-selected='true'],
+.aa-Item[aria-selected='true'],
+.DocSearch-Hit:hover,
+.aa-Item:hover {
+  background-color: rgba(22, 163, 74, 0.08);
+}
+
+/* Result title */
+.DocSearch-Hit-title,
+.aa-ItemTitle {
+  font-weight: 600;
+  color: var(--ifm-font-color-base);
+}
+
+/* Result path */
+.DocSearch-Hit-path,
+.aa-ItemPath {
+  font-size: 12px;
+  color: var(--ifm-color-emphasis-600);
+  margin-top: 4px;
+}
+
+/* Highlighted text in results */
+.DocSearch-Hit-title mark,
+.aa-ItemTitle mark,
+mark {
+  background-color: rgba(22, 163, 74, 0.2);
+  color: inherit;
+  padding: 1px 2px;
+  border-radius: 2px;
+}
+
+/* No results */
+.DocSearch-NoResults,
+.aa-NoResults {
+  padding: 32px 16px;
+  text-align: center;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* Footer */
+.DocSearch-Footer,
+.aa-Footer {
+  border-top: 1px solid var(--ifm-color-emphasis-200);
+  padding: 12px 16px;
+  font-size: 12px;
+  color: var(--ifm-color-emphasis-600);
+}
+
+/* ============================================
+   RTL SEARCH SUPPORT
+   ============================================ */
+
+/* RTL Search Button */
+html[lang='ur'] .DocSearch-Button,
+html[lang='ur'] button[class*='searchBar'],
+html[lang='ur'] .aa-DetachedSearchButton {
+  flex-direction: row-reverse;
+}
+
+html[lang='ur'] .DocSearch-Button-Placeholder,
+html[lang='ur'] .aa-DetachedSearchButtonPlaceholder {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', sans-serif;
+}
+
+/* RTL Modal */
+html[lang='ur'] .DocSearch-Modal,
+html[lang='ur'] .aa-Panel {
+  direction: rtl;
+}
+
+html[lang='ur'] .DocSearch-Input,
+html[lang='ur'] .aa-Input {
+  text-align: right;
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', sans-serif;
+}
+
+html[lang='ur'] .DocSearch-Hit,
+html[lang='ur'] .aa-Item {
+  text-align: right;
+  direction: rtl;
+}
+
+html[lang='ur'] .DocSearch-Hit-title,
+html[lang='ur'] .aa-ItemTitle,
+html[lang='ur'] .DocSearch-Hit-path,
+html[lang='ur'] .aa-ItemPath {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', sans-serif;
+}
+
+html[lang='ur'] .DocSearch-NoResults,
+html[lang='ur'] .aa-NoResults {
+  font-family: 'Noto Nastaliq Urdu', 'Noto Sans Arabic', sans-serif;
+}
+
+/* ============================================
+   DARK MODE SEARCH ADJUSTMENTS
+   ============================================ */
+
+[data-theme='dark'] .DocSearch-Button,
+[data-theme='dark'] button[class*='searchBar'],
+[data-theme='dark'] .aa-DetachedSearchButton {
+  background-color: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .DocSearch-Button:hover,
+[data-theme='dark'] button[class*='searchBar']:hover {
+  background-color: rgba(34, 197, 94, 0.1);
+  border-color: var(--ifm-color-primary);
+}
+
+[data-theme='dark'] .DocSearch-Modal,
+[data-theme='dark'] .aa-Panel {
+  background-color: var(--ifm-background-color);
+  border-color: var(--ifm-color-emphasis-400);
+}
+
+[data-theme='dark'] .DocSearch-Hit[aria-selected='true'],
+[data-theme='dark'] .aa-Item[aria-selected='true'],
+[data-theme='dark'] .DocSearch-Hit:hover,
+[data-theme='dark'] .aa-Item:hover {
+  background-color: rgba(34, 197, 94, 0.12);
+}
+
+[data-theme='dark'] mark,
+[data-theme='dark'] .DocSearch-Hit-title mark {
+  background-color: rgba(34, 197, 94, 0.25);
+}
+
+/* ============================================
+   MOBILE SEARCH STYLING
+   ============================================ */
+
+@media (max-width: 996px) {
+  .DocSearch-Button,
+  button[class*='searchBar'] {
+    padding: 8px;
+    min-width: 36px;
+    justify-content: center;
+  }
+
+  .DocSearch-Button-Placeholder,
+  .DocSearch-Button-Keys,
+  .aa-DetachedSearchButtonPlaceholder,
+  .aa-DetachedSearchButtonKeys {
+    display: none;
+  }
+
+  .DocSearch-Modal,
+  .aa-Panel {
+    width: 95%;
+    max-width: none;
+    margin: 16px;
+    max-height: 80vh;
+  }
+}
+
+/* ============================================
+   HIGHLIGHT SEARCH TERMS ON PAGE
+   ============================================ */
+
+.search-result-highlight {
+  background-color: rgba(22, 163, 74, 0.25);
+  padding: 2px 4px;
+  border-radius: 3px;
+  animation: highlightFade 2s ease-out;
+}
+
+@keyframes highlightFade {
+  0% {
+    background-color: rgba(22, 163, 74, 0.5);
+  }
+  100% {
+    background-color: rgba(22, 163, 74, 0.25);
+  }
+}
+
+[data-theme='dark'] .search-result-highlight {
+  background-color: rgba(34, 197, 94, 0.3);
 }

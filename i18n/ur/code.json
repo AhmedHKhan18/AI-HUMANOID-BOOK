@@ -1,0 +1,464 @@
+{
+  "homepage.title": {
+    "message": "ہوم"
+  },
+  "homepage.description": {
+    "message": "ذہین روبوٹس کو سمجھنے اور بنانے کے لیے ایک جامع رہنما، جو جدید ترین AI طریقوں کو عملی ہیومنائڈ روبوٹکس ایپلی کیشنز کے ساتھ مربوط کرتی ہے۔"
+  },
+  "homepage.hero.title": {
+    "message": "فزیکل AI اور ہیومنائڈ روبوٹکس"
+  },
+  "homepage.hero.subtitle": {
+    "message": "ذہین ہیومنائڈ روبوٹس بنانے کے لیے ایک جامع اوپن سورس نصابی کتاب"
+  },
+  "homepage.hero.button": {
+    "message": "← پڑھنا شروع کریں"
+  },
+  "homepage.whatCovers.title": {
+    "message": "یہ نصابی کتاب کیا شامل کرتی ہے"
+  },
+  "homepage.module1.label": {
+    "message": "ماڈیول 1"
+  },
+  "homepage.module1.heading": {
+    "message": "ROS 2 کی بنیادیں"
+  },
+  "homepage.module1.description": {
+    "message": "جدید روبوٹکس میں مواصلات، کنٹرول آرکیٹیکچر اور پیکج ڈیولپمنٹ کے لیے روبوٹ آپریٹنگ سسٹم 2 میں مہارت حاصل کریں۔"
+  },
+  "homepage.module2.label": {
+    "message": "ماڈیول 2"
+  },
+  "homepage.module2.heading": {
+    "message": "سمولیشن اور ڈیجیٹل ٹوئنز"
+  },
+  "homepage.module2.description": {
+    "message": "ٹیسٹنگ، ڈیولپمنٹ اور AI ماڈل ٹریننگ کے لیے Gazebo اور Unity کے ساتھ حقیقت پسندانہ ورچوئل ماحول بنائیں۔"
+  },
+  "homepage.module3.label": {
+    "message": "ماڈیول 3"
+  },
+  "homepage.module3.heading": {
+    "message": "NVIDIA آئزک پلیٹ فارم"
+  },
+  "homepage.module3.description": {
+    "message": "GPU سے تیز رفتار ادراک، نیویگیشن اور ہیرا پھیری کی صلاحیتوں کے لیے Isaac Sim اور Isaac ROS کو یکجا کریں۔"
+  },
+  "homepage.module4.label": {
+    "message": "ماڈیول 4"
+  },
+  "homepage.module4.heading": {
+    "message": "ویژن-لینگویج-ایکشن (VLA)"
+  },
+  "homepage.module4.description": {
+    "message": "ملٹی موڈل AI سسٹمز نافذ کریں جو قدرتی زبان سمجھیں، دنیا کو دیکھیں اور پیچیدہ جسمانی کام انجام دیں۔"
+  },
+  "homepage.openModule": {
+    "message": "← ماڈیول کھولیں"
+  },
+  "homepage.motivation.title": {
+    "message": "یہ نصابی کتاب AI-Native اور مستقبل پر مرکوز کیوں ہے"
+  },
+  "homepage.motivation.text": {
+    "message": "فزیکل AI مصنوعی ذہانت کا مجسم روبوٹکس کے ساتھ ملاپ ہے — ایسی مشینیں بنانا جو صرف معلومات پر عمل نہیں کرتیں، بلکہ جسمانی دنیا کے ساتھ معنی خیز تعامل کرتی ہیں۔ یہ نصابی کتاب نظریاتی AI اور عملی ہیومنائڈ روبوٹکس کے درمیان فاصلے کو ختم کرتی ہے، واقعی ذہین، خود مختار ایجنٹس بنانے کے لیے ایک جامع فریم ورک فراہم کرتی ہے۔"
+  },
+  "homepage.learningPath.title": {
+    "message": "آپ کا سیکھنے کا راستہ"
+  },
+  "homepage.learningPath.description": {
+    "message": "یہ نصابی کتاب بنیادی تصورات سے لے کر جدید انٹیگریشن تک احتیاط سے ترتیب دی گئی پیش رفت کی پیروی کرتی ہے۔ ہر ماڈیول پچھلے پر استوار ہوتا ہے، جو مکمل طور پر خود مختار ہیومنائڈ روبوٹ سسٹم میں ختم ہوتا ہے۔"
+  },
+  "homepage.learningPath.beginButton": {
+    "message": "← اپنا سفر شروع کریں"
+  },
+  "homepage.learningPath.tocButton": {
+    "message": "فہرست مضامین دیکھیں"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "مرکزی مواد پر جائیں",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "زبانیں",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "سائیڈبار بند کریں",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "سائیڈبار کھولیں",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "سائیڈبار کھولیں",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "ایک دستاویز ٹیگ کی گئی|{count} دستاویزات ٹیگ کی گئیں",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "\"{tagName}\" کے ساتھ ٹیگ کردہ {nDocsTagged}",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "یہ صفحہ خراب ہو گیا ہے۔",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "دوبارہ کوشش کریں",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.NotFound.title": {
+    "message": "صفحہ نہیں ملا",
+    "description": "The title of the 404 page"
+  },
+  "theme.NotFound.p1": {
+    "message": "ہمیں وہ نہیں مل سکا جو آپ ڈھونڈ رہے تھے۔",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "براہ کرم اس صفحے سے منسلک سائٹ کے مالک سے رابطہ کریں تاکہ انہیں ٹوٹے ہوئے لنک کے بارے میں آگاہ کیا جا سکے۔",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "اس صفحے پر",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "یہ {siteTitle} {versionLabel} ورژن کی غیر ریلیز شدہ دستاویزات ہیں۔",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "یہ {siteTitle} {versionLabel} کی دستاویزات ہیں، جو اب فعال طور پر برقرار نہیں ہیں۔",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "تازہ ترین دستاویزات کے لیے، براہ کرم {latestVersionLink} ({versionLabel}) دیکھیں۔",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "تازہ ترین ورژن",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "اس صفحے میں ترمیم کریں",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading} کا براہ راست لنک",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " {date} کو",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " {user} کی طرف سے",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "آخری تازہ کاری{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← مین مینو پر واپس جائیں",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "دستاویزات سائیڈبار",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "ڈارک اور لائٹ موڈ کے درمیان سوئچ کریں (فی الحال {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "ڈارک موڈ",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "لائٹ موڈ",
+    "description": "The name for the light color mode"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "دستاویزات صفحات",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "پچھلا",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "اگلا",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.searchBar.label": {
+    "message": "تلاش کریں",
+    "description": "The ARIA label for the search box"
+  },
+  "theme.SearchBar.placeholder": {
+    "message": "تلاش کریں...",
+    "description": "The placeholder text for the search input"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "تمام نتائج دیکھیں",
+    "description": "The label for the button to see all search results"
+  },
+  "theme.SearchBar.noResults": {
+    "message": "کوئی نتائج نہیں ملے",
+    "description": "The message shown when no search results are found"
+  },
+  "theme.SearchBar.searchResultsFor": {
+    "message": "\"{{ keyword }}\" کے لیے تلاش کے نتائج",
+    "description": "The message shown for search results with the keyword"
+  },
+  "theme.SearchBar.searchTheDocumentation": {
+    "message": "دستاویزات میں تلاش کریں",
+    "description": "The message for searching the documentation"
+  },
+  "theme.SearchBar.documentsFound": {
+    "message": "{{ count }} دستاویز ملی | {{ count }} دستاویزات ملیں",
+    "description": "The number of documents found"
+  },
+  "theme.SearchBar.noDocumentsFound": {
+    "message": "کوئی دستاویز نہیں ملی",
+    "description": "The message when no documents are found"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "ایک دستاویز ملی|{count} دستاویزات ملیں",
+    "description": "Pluralized label for documents found"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "\"{{ keyword }}\" کے لیے تلاش کے نتائج",
+    "description": "The search page title for search results"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "دستاویزات میں تلاش کریں",
+    "description": "The title for the search page when there are no results"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "یہاں اپنی تلاش ٹائپ کریں",
+    "description": "The placeholder text for the search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "تلاش کریں",
+    "description": "The ARIA label for the search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Algolia سے تلاش",
+    "description": "The label for Algolia search"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "نئے نتائج حاصل کیے جا رہے ہیں...",
+    "description": "The message shown when fetching new results"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog list page navigation",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Newer entries",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Older entries",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog post page navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Newer post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Older post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "View all tags",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "warning",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  }
+}

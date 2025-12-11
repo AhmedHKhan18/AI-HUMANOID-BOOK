@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "موجودہ",
+    "description": "The label for version current"
+  },
+  "sidebar.textbookSidebar.category.Module 1: ROS 2 Foundations": {
+    "message": "ماڈیول 1: ROS 2 کی بنیادیں",
+    "description": "The label for category 'Module 1: ROS 2 Foundations' in sidebar 'textbookSidebar'"
+  },
+  "sidebar.textbookSidebar.category.Module 2: Simulation & Digital Twins": {
+    "message": "ماڈیول 2: سمولیشن اور ڈیجیٹل ٹوئنز",
+    "description": "The label for category 'Module 2: Simulation & Digital Twins' in sidebar 'textbookSidebar'"
+  },
+  "sidebar.textbookSidebar.category.Module 3: NVIDIA Isaac Platform": {
+    "message": "ماڈیول 3: NVIDIA آئزک پلیٹ فارم",
+    "description": "The label for category 'Module 3: NVIDIA Isaac Platform' in sidebar 'textbookSidebar'"
+  },
+  "sidebar.textbookSidebar.category.Module 4: Vision-Language-Action": {
+    "message": "ماڈیول 4: ویژن-لینگویج-ایکشن",
+    "description": "The label for category 'Module 4: Vision-Language-Action' in sidebar 'textbookSidebar'"
+  },
+  "sidebar.textbookSidebar.category.Appendix": {
+    "message": "ضمیمہ",
+    "description": "The label for category 'Appendix' in sidebar 'textbookSidebar'"
+  },
+  "sidebar.textbookSidebar.doc.Introduction": {
+    "message": "تعارف",
+    "description": "The label for the doc item 'Introduction' in sidebar 'textbookSidebar', linking to the doc intro"
+  }
+}

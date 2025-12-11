@@ -1,0 +1,126 @@
+{
+  "theme.SearchBar.label": {
+    "message": "تلاش",
+    "description": "The ARIA label and placeholder for the search button"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "ایک دستاویز ملی|{count} دستاویزات ملیں",
+    "description": "Pluralized label for \"{count} documents found\""
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "\"{keyword}\" کے لیے تلاش کے نتائج",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "دستاویزات میں تلاش کریں",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "یہاں اپنی تلاش ٹائپ کریں",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "تلاش",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "کوئی نتائج نہیں ملے",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "نئے نتائج حاصل کیے جا رہے ہیں...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "استفسار صاف کریں",
+    "description": "The title of the clear query button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "منسوخ کریں",
+    "description": "The text of the cancel button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "حالیہ تلاشیں",
+    "description": "The title of recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "کوئی حالیہ تلاشیں نہیں",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "اس تلاش کو محفوظ کریں",
+    "description": "The title of save search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "اس تلاش کو تاریخ سے ہٹائیں",
+    "description": "The title of remove from history button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "پسندیدہ تلاشیں",
+    "description": "The title of favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "اس تلاش کو پسندیدہ سے ہٹائیں",
+    "description": "The title of remove from favorites button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "نتائج حاصل کرنے میں ناکام",
+    "description": "The error screen title"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "آپ اپنا نیٹ ورک کنکشن چیک کرنا چاہ سکتے ہیں۔",
+    "description": "The error screen help text"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "منتخب کرنے کے لیے",
+    "description": "The select key text"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "Enter key",
+    "description": "The select key aria label"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "نیویگیٹ کرنے کے لیے",
+    "description": "The navigate text"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "Arrow up",
+    "description": "The navigate up key aria label"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "Arrow down",
+    "description": "The navigate down key aria label"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "بند کرنے کے لیے",
+    "description": "The close text"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "Escape key",
+    "description": "The close key aria label"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "سے تلاش",
+    "description": "The search by text"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "کے لیے کوئی نتائج نہیں",
+    "description": "The no results text"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "تلاش کریں",
+    "description": "The suggested query text"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "یقین ہے کہ یہ استفسار نتائج لوٹائے گا؟",
+    "description": "The report missing results text"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "ہمیں بتائیں۔",
+    "description": "The report missing results link text"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "تلاش کریں...",
+    "description": "The search box placeholder"
+  }
+}

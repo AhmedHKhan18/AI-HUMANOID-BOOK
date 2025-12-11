@@ -7,32 +7,74 @@ const config = {
   url: 'https://ai-humanoid-book-six.vercel.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: './static/img/robot-img.png',
   markdown: {
-    // Docusaurus internal options
-    // The following options are only used by Docusaurus internal tooling,
-    // and generally don't need to be customized by users
-    // See https://docusaurus.io/docs/api/docusaurus-config/#markdown
-    // parseFrontMatter: async ({filePath, fileContent}) => {},
-    // rehypePlugins: [],
-    // remarkPlugins: [],
-    // headers: 'auto',
-    // lineNumbering: false,
-    // mermaidFallback: {},
-
     hooks: {
       onBrokenMarkdownLinks: 'warn',
       onBrokenMarkdownImages: 'warn',
     },
   },
 
+  // ============================================
+  // I18N CONFIGURATION - English & Urdu
+  // ============================================
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'ur'],
+    localeConfigs: {
+      en: {
+        label: 'English',
+        direction: 'ltr',
+        htmlLang: 'en-US',
+      },
+      ur: {
+        label: 'اردو',
+        direction: 'rtl',
+        htmlLang: 'ur-PK',
+      },
+    },
   },
 
   organizationName: 'your-organization',
   projectName: 'physical-ai-humanoid-robotics-book',
+
+  // ============================================
+  // THEMES - Local Search Plugin
+  // ============================================
+  themes: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        // Index all docs content
+        indexDocs: true,
+        indexBlog: false, // Disabled - no blog directory
+        indexPages: true,
+
+        // Language support - Note: lunr-languages doesn't support Urdu
+        // Urdu content will still be indexed using English stemmer
+        language: ['en'],
+
+        // Search bar behavior
+        hashed: true,
+
+        // Highlight search terms in results
+        highlightSearchTermsOnTargetPage: true,
+
+        // Explode heading segments for better matching
+        explicitSearchResultPath: true,
+
+        // Search result limit
+        searchResultLimits: 8,
+
+        // Search result context length
+        searchResultContextMaxLength: 50,
+
+        // Note: Translations are handled via i18n files in:
+        // i18n/ur/docusaurus-theme-search-local/default.json
+      }),
+    ],
+  ],
 
   presets: [
     [
@@ -41,9 +83,7 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          // editUrl: 'https://github.com/your-repo-link/edit/main/',
           remarkPlugins: [require('remark-mermaid')],
-          // Use the textbookSidebar from sidebars.js
           sidebarCollapsible: true,
           sidebarCollapsed: true,
         },
@@ -71,24 +111,30 @@ const config = {
             label: 'Textbook',
             position: 'left',
           },
+          // Search bar - positioned on the right
+          {
+            type: 'search',
+            position: 'right',
+          },
           {
             href: 'https://github.com/AhmedHKhan18',
             label: 'GitHub',
             position: 'right',
           },
+          // Language toggle dropdown
           {
             type: 'localeDropdown',
             position: 'right',
-          i18n: {
-          defaultLocale: 'en',
-          locales: ['en', 'ur'],
-          localeConfigs: {
-              ur: {
-              label: 'اردو',
-              direction: 'rtl',
-            },
-          },
-        },
+            dropdownItemsAfter: [
+              {
+                type: 'html',
+                value: '<hr style="margin: 0.3rem 0;">',
+              },
+              {
+                href: 'https://github.com/AhmedHKhan18',
+                label: 'Help translate',
+              },
+            ],
           },
         ],
       },

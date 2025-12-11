@@ -1,0 +1,18 @@
+{
+  "title": {
+    "message": "فزیکل AI اور ہیومنائڈ روبوٹکس",
+    "description": "The title in the navbar"
+  },
+  "item.label.Textbook": {
+    "message": "نصابی کتاب",
+    "description": "Navbar item with label Textbook"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.Help translate": {
+    "message": "ترجمہ میں مدد کریں",
+    "description": "Navbar item with label Help translate"
+  }
+}
