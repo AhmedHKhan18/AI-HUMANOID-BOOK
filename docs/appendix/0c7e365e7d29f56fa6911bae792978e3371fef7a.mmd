@@ -1,0 +1,37 @@
+graph TD
+    subgraph On-Premise Lab
+        A[Simulation Workstation: RTX GPU] --- B(ROS 2 Core: Module 1)
+        B --- C(Digital Twin: Gazebo & Unity - Module 2)
+        C --- D(Isaac AI Robot Brain: Isaac Sim/ROS - Module 3)
+        D --- E(Vision-Language-Action: Whisper/LLM - Module 4)
+    end
+
+    subgraph Cloud-Native (Ether Lab)
+        F[Cloud Platform: AWS/Azure + Omniverse] --- B
+    end
+
+    B --- G(Jetson Edge Kit: Orin NX)
+    G --- H(Sensors: RealSense, IMU, LiDAR)
+    G --- I(Robot: Unitree G1 / Proxy)
+
+    E --- J(Capstone Workflow: Autonomous Humanoid)
+    J --- K(Voice Command)
+    J --- L(LLM Planning)
+    J --- M(Robot Navigation)
+    J --- N(Object Perception)
+    J --- O(Object Manipulation)
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style F fill:#f9f,stroke:#333,stroke-width:2px
+    style G fill:#f9f,stroke:#333,stroke-width:2px
+    style I fill:#f9f,stroke:#333,stroke-width:2px
+
+    subgraph Data Flow
+        Sensor_Data[Sensor Data] --> D
+        D --> G
+        G --> H
+        LLM_Output[LLM Output] --> E
+        E --> D
+        Robot_Commands[Robot Commands] --> I
+        Voice_Input[Voice Input] --> E
+    end
