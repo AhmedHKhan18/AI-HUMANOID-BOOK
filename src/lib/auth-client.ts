@@ -4,7 +4,7 @@ const getBaseURL = () => {
   if (typeof window !== "undefined") {
     // Client-side: use environment variable or default
     return process.env.NODE_ENV === "production"
-      ? "https://api.yourdomain.com" // Update for production
+      ? "https://ai-humanoid-book-production.up.railway.app"
       : "http://localhost:3001";
   }
   // Server-side during build
