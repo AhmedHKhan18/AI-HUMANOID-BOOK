@@ -23,6 +23,14 @@ yarn-error.log*
 .env*.local
 .DS_Store
 
+# API Server
+api/dist/
+api/node_modules/
+api/.env
+
+# Drizzle
+drizzle/
+
 # C# / Unity
 [Bb]in/
 [Oo]bj/
@@ -51,3 +59,4 @@ UnityPackageManager/
 # OS generated files
 .DS_Store
 Thumbs.db
+nul

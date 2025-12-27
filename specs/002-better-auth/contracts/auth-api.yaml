@@ -1,0 +1,598 @@
+openapi: 3.0.3
+info:
+  title: Better Auth API
+  description: Authentication API endpoints for Docusaurus documentation site
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3001/api/auth
+    description: Development server
+  - url: https://api.yourdomain.com/api/auth
+    description: Production server
+
+paths:
+  /sign-up:
+    post:
+      summary: Register a new user
+      description: Creates a new user account with email/password authentication
+      operationId: signUp
+      tags: [Authentication]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password, username]
+              properties:
+                email:
+                  type: string
+                  format: email
+                  example: user@example.com
+                password:
+                  type: string
+                  minLength: 8
+                  maxLength: 128
+                  example: SecurePass123!
+                username:
+                  type: string
+                  pattern: ^[a-zA-Z0-9]{3,30}$
+                  example: johndoe
+                name:
+                  type: string
+                  maxLength: 100
+                  example: John Doe
+      responses:
+        '200':
+          description: Registration successful, verification email sent
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                invalidEmail:
+                  value:
+                    code: INVALID_EMAIL
+                    message: Invalid email format
+                weakPassword:
+                  value:
+                    code: WEAK_PASSWORD
+                    message: Password must be at least 8 characters
+        '409':
+          description: Email or username already exists
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              examples:
+                emailExists:
+                  value:
+                    code: EMAIL_EXISTS
+                    message: An account with this email already exists
+                usernameExists:
+                  value:
+                    code: USERNAME_EXISTS
+                    message: This username is already taken
+
+  /sign-in:
+    post:
+      summary: Sign in with email and password
+      description: Authenticates user and creates a session
+      operationId: signIn
+      tags: [Authentication]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email, password]
+              properties:
+                email:
+                  type: string
+                  format: email
+                password:
+                  type: string
+                rememberMe:
+                  type: boolean
+                  default: false
+      responses:
+        '200':
+          description: Login successful
+          headers:
+            Set-Cookie:
+              schema:
+                type: string
+              description: Session cookie
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Invalid credentials
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: INVALID_CREDENTIALS
+                message: Invalid email or password
+        '429':
+          description: Rate limit exceeded
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: RATE_LIMITED
+                message: Too many login attempts. Please try again later.
+                retryAfter: 900
+
+  /sign-out:
+    post:
+      summary: Sign out current user
+      description: Invalidates the current session
+      operationId: signOut
+      tags: [Authentication]
+      security:
+        - cookieAuth: []
+      responses:
+        '200':
+          description: Logout successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+        '401':
+          description: Not authenticated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /session:
+    get:
+      summary: Get current session
+      description: Returns the current user session if valid
+      operationId: getSession
+      tags: [Session]
+      security:
+        - cookieAuth: []
+      responses:
+        '200':
+          description: Session data
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SessionResponse'
+        '401':
+          description: No valid session
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  session:
+                    type: 'null'
+                  user:
+                    type: 'null'
+
+  /verify-email:
+    post:
+      summary: Verify email address
+      description: Verifies email using token from verification email
+      operationId: verifyEmail
+      tags: [Email Verification]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [token]
+              properties:
+                token:
+                  type: string
+                  description: Verification token from email link
+      responses:
+        '200':
+          description: Email verified successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  user:
+                    $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid or expired token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+              example:
+                code: INVALID_TOKEN
+                message: Verification link is invalid or has expired
+
+  /resend-verification:
+    post:
+      summary: Resend verification email
+      description: Sends a new verification email to the user
+      operationId: resendVerification
+      tags: [Email Verification]
+      security:
+        - cookieAuth: []
+      responses:
+        '200':
+          description: Verification email sent (or queued)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                    example: Verification email sent. Check your inbox.
+        '400':
+          description: Email already verified
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /forgot-password:
+    post:
+      summary: Request password reset
+      description: Sends password reset email if account exists
+      operationId: forgotPassword
+      tags: [Password Reset]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [email]
+              properties:
+                email:
+                  type: string
+                  format: email
+      responses:
+        '200':
+          description: Reset email sent (neutral response to prevent enumeration)
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  message:
+                    type: string
+                    example: If an account exists, a reset link has been sent.
+
+  /reset-password:
+    post:
+      summary: Reset password with token
+      description: Sets new password using reset token from email
+      operationId: resetPassword
+      tags: [Password Reset]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [token, password]
+              properties:
+                token:
+                  type: string
+                password:
+                  type: string
+                  minLength: 8
+                  maxLength: 128
+      responses:
+        '200':
+          description: Password reset successful
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        '400':
+          description: Invalid or expired token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+
+  /user:
+    get:
+      summary: Get current user profile
+      description: Returns the authenticated user's profile
+      operationId: getUser
+      tags: [User Management]
+      security:
+        - cookieAuth: []
+      responses:
+        '200':
+          description: User profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '401':
+          description: Not authenticated
+
+    patch:
+      summary: Update user profile
+      description: Updates the authenticated user's profile
+      operationId: updateUser
+      tags: [User Management]
+      security:
+        - cookieAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  pattern: ^[a-zA-Z0-9]{3,30}$
+                name:
+                  type: string
+                  maxLength: 100
+                image:
+                  type: string
+                  format: uri
+      responses:
+        '200':
+          description: Profile updated
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '409':
+          description: Username already taken
+
+    delete:
+      summary: Delete user account
+      description: Permanently deletes the user account and all data
+      operationId: deleteUser
+      tags: [User Management]
+      security:
+        - cookieAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [password]
+              properties:
+                password:
+                  type: string
+                  description: Current password for confirmation
+      responses:
+        '200':
+          description: Account deleted
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+        '401':
+          description: Invalid password
+
+  /change-password:
+    post:
+      summary: Change password
+      description: Changes the password for authenticated user
+      operationId: changePassword
+      tags: [User Management]
+      security:
+        - cookieAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [currentPassword, newPassword]
+              properties:
+                currentPassword:
+                  type: string
+                newPassword:
+                  type: string
+                  minLength: 8
+                  maxLength: 128
+      responses:
+        '200':
+          description: Password changed successfully
+        '401':
+          description: Current password incorrect
+
+  /update-email:
+    post:
+      summary: Request email change
+      description: Initiates email change process with verification
+      operationId: updateEmail
+      tags: [User Management]
+      security:
+        - cookieAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [newEmail, password]
+              properties:
+                newEmail:
+                  type: string
+                  format: email
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Verification email sent to new address
+        '409':
+          description: Email already in use
+
+  /sessions:
+    get:
+      summary: List active sessions
+      description: Returns all active sessions for the user
+      operationId: listSessions
+      tags: [Session]
+      security:
+        - cookieAuth: []
+      responses:
+        '200':
+          description: List of active sessions
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sessions:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Session'
+
+  /sessions/{sessionId}:
+    delete:
+      summary: Revoke a session
+      description: Terminates a specific session
+      operationId: revokeSession
+      tags: [Session]
+      security:
+        - cookieAuth: []
+      parameters:
+        - name: sessionId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Session revoked
+        '404':
+          description: Session not found
+
+components:
+  securitySchemes:
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: better-auth.session_token
+
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: string
+        email:
+          type: string
+          format: email
+        emailVerified:
+          type: boolean
+        username:
+          type: string
+        name:
+          type: string
+          nullable: true
+        image:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        updatedAt:
+          type: string
+          format: date-time
+
+    Session:
+      type: object
+      properties:
+        id:
+          type: string
+        userId:
+          type: string
+        expiresAt:
+          type: string
+          format: date-time
+        ipAddress:
+          type: string
+          nullable: true
+        userAgent:
+          type: string
+          nullable: true
+        createdAt:
+          type: string
+          format: date-time
+        isCurrent:
+          type: boolean
+
+    AuthResponse:
+      type: object
+      properties:
+        user:
+          $ref: '#/components/schemas/User'
+        session:
+          $ref: '#/components/schemas/Session'
+
+    SessionResponse:
+      type: object
+      properties:
+        session:
+          $ref: '#/components/schemas/Session'
+        user:
+          $ref: '#/components/schemas/User'
+
+    ErrorResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          description: Error code for client handling
+        message:
+          type: string
+          description: Human-readable error message
+        retryAfter:
+          type: integer
+          description: Seconds until retry allowed (for rate limiting)
+
+tags:
+  - name: Authentication
+    description: Sign up, sign in, sign out operations
+  - name: Session
+    description: Session management operations
+  - name: Email Verification
+    description: Email verification operations
+  - name: Password Reset
+    description: Password reset operations
+  - name: User Management
+    description: User profile and account management
