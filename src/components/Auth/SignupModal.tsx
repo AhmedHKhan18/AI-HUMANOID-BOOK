@@ -82,8 +82,10 @@ export function SignupModal({
       if (result.error) {
         setError(result.error.message || "Registration failed. Please try again.");
       } else {
-        setSuccess(true);
+        // Registration successful - close modal and refresh page to show logged-in state
         reset();
+        handleClose();
+        window.location.reload();
       }
     } catch (err) {
       setError("An unexpected error occurred. Please try again.");
