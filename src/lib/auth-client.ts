@@ -13,6 +13,9 @@ const getBaseURL = () => {
 
 export const authClient = createAuthClient({
   baseURL: getBaseURL(),
+  fetchOptions: {
+    credentials: "include", // Required for cross-origin cookies
+  },
 });
 
 export const { signIn, signUp, signOut, useSession } = authClient;
