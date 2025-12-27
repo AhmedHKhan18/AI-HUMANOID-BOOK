@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { signOut } from "@site/src/lib/auth-client";
+import { signOut, clearAuthData } from "@site/src/lib/auth-client";
 import { useAuth } from "./AuthProvider";
 import "./AuthModal.css";
 
@@ -28,9 +28,13 @@ export function UserMenu(): JSX.Element | null {
   const handleLogout = async () => {
     try {
       await signOut();
+      clearAuthData(); // Clear localStorage
       window.location.reload();
     } catch (error) {
       console.error("Logout failed:", error);
+      // Still clear local storage and reload even if signOut fails
+      clearAuthData();
+      window.location.reload();
     }
   };
 
