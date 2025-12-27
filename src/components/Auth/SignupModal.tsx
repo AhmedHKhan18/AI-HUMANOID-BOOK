@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { signUp } from "@site/src/lib/auth-client";
+import { signUp, storeAuthData } from "@site/src/lib/auth-client";
 import { PasswordStrength } from "./PasswordStrength";
 import "./AuthModal.css";
 
@@ -81,7 +81,11 @@ export function SignupModal({
 
       if (result.error) {
         setError(result.error.message || "Registration failed. Please try again.");
-      } else {
+      } else if (result.data) {
+        // Store auth data in localStorage for cross-origin support
+        if (result.data.token && result.data.user) {
+          storeAuthData(result.data.token, result.data.user);
+        }
         // Registration successful - close modal and refresh page to show logged-in state
         reset();
         handleClose();

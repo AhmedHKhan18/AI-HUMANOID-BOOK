@@ -1,5 +1,5 @@
-import React, { createContext, useContext, ReactNode } from "react";
-import { useSession } from "@site/src/lib/auth-client";
+import React, { createContext, useContext, ReactNode, useState, useEffect } from "react";
+import { useSession, getStoredAuth } from "@site/src/lib/auth-client";
 
 interface User {
   id: string;
@@ -40,13 +40,28 @@ interface AuthProviderProps {
 
 export function AuthProvider({ children }: AuthProviderProps): JSX.Element {
   const { data, isPending } = useSession();
+  const [localAuth, setLocalAuth] = useState<{ user: User } | null>(null);
+  const [isLocalLoading, setIsLocalLoading] = useState(true);
+
+  // Check localStorage on mount
+  useEffect(() => {
+    const stored = getStoredAuth();
+    if (stored?.user) {
+      setLocalAuth({ user: stored.user as User });
+    }
+    setIsLocalLoading(false);
+  }, []);
+
+  // Use server session if available, otherwise fall back to localStorage
+  const user = (data?.user as User | null) || localAuth?.user || null;
+  const isLoading = isPending && isLocalLoading;
 
   const value: AuthContextType = {
-    user: data?.user as User | null,
+    user,
     session: data?.session as Session | null,
-    isLoading: isPending,
-    isAuthenticated: !!data?.user,
-    isEmailVerified: data?.user?.emailVerified ?? false,
+    isLoading,
+    isAuthenticated: !!user,
+    isEmailVerified: user?.emailVerified ?? false,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

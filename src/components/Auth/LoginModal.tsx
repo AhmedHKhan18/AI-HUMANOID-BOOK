@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
-import { signIn } from "@site/src/lib/auth-client";
+import { signIn, storeAuthData } from "@site/src/lib/auth-client";
 import "./AuthModal.css";
 
 const loginSchema = z.object({
@@ -69,7 +69,11 @@ export function LoginModal({
         } else {
           setError(result.error.message || "Login failed. Please try again.");
         }
-      } else {
+      } else if (result.data) {
+        // Store auth data in localStorage for cross-origin support
+        if (result.data.token && result.data.user) {
+          storeAuthData(result.data.token, result.data.user);
+        }
         // Success - close modal
         reset();
         onClose();
