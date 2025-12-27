@@ -49,12 +49,12 @@ app.use((_req, res) => {
   });
 });
 
-const PORT = parseInt(process.env.API_PORT || "3001");
+const PORT = parseInt(process.env.PORT || process.env.API_PORT || "3001");
 
-app.listen(PORT, () => {
-  console.log(`Auth API server running on http://localhost:${PORT}`);
-  console.log(`Health check: http://localhost:${PORT}/health`);
-  console.log(`Auth endpoints: http://localhost:${PORT}/api/auth/*`);
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(`Auth API server running on port ${PORT}`);
+  console.log(`Health check: /health`);
+  console.log(`Auth endpoints: /api/auth/*`);
 });
 
 // Process email queue every minute
